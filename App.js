@@ -16,15 +16,22 @@ import {
   Dimensions
 } from 'react-native';
 import {IntroColors} from './src/config/colors';
+import Icon from 'react-native-vector-icons/Ionicons';
+// navigaion 5
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+// screens
+import Home from './src/screens/Home';
 
+Icon.loadFont();
+const Stack = createStackNavigator();
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle='dark-content' backgroundColor='#fff' />
-      <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-        <Text style={{fontSize:34,color:IntroColors.textColor,fontFamily:'Langar-Regular'}}>Abbas Ali</Text>
-      </View>
-    </>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} options={{headerShown:false}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 const styles = StyleSheet.create({
