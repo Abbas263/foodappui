@@ -7,16 +7,14 @@
  */
 import React from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
-  Dimensions
+  Dimensions,
 } from 'react-native';
 // https://www.dropbox.com/s/1fup5vqbbzj0dis/TruvyFit.sketch?dl=0
-import {IntroColors} from './src/config/colors';
+
+// icons to load in app
 import Icon from 'react-native-vector-icons/Ionicons';
 // navigaion 5
 import { NavigationContainer } from '@react-navigation/native';
@@ -27,7 +25,11 @@ import Details from './src/screens/Details';
 
 Icon.loadFont();
 const Stack = createStackNavigator();
+
+
+
 const App = () => {
+  
   return (
     <NavigationContainer>
       <Stack.Navigator>
