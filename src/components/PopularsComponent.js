@@ -4,13 +4,15 @@ import popularData from "../assets/data/popularData";
 import { foodAppColors } from "../config/colors";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Feather from 'react-native-vector-icons/Feather';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
-const PopularsComponent = () => {
+const PopularsComponent = ({navigation}) => {
     return (
         <View style={styles.popularWraper}>
             <Text style={styles.popularTitle}>Popular</Text>
             {popularData.map((item) => (
-                <View key={item.id}
+                <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Details')}}>
+                <View 
                  style={[styles.popularCardWraper, { marginTop: item.id == 1 ? 10 : 20 }]}>
                     <View>
                         <View>
@@ -37,6 +39,7 @@ const PopularsComponent = () => {
                         <Image source={item.img} style={styles.popularCardImage}/>
                     </View>
                 </View>
+                </TouchableOpacity>
             ))}
         </View>
     );
